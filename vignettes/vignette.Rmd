@@ -1,0 +1,79 @@
+---
+title: "Group 17"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+```{r setup, echo= FALSE, warning=FALSE, include = FALSE}
+library(group17)
+```
+# Package Group 17
+
+# Table of Contents
+
+- [Introduction](#intro)
+- [Get started](#start)
+  - [Installation](#inst)
+- [Methods](#methods)
+  - [func1](#fun1)
+  - [func2](#fun2)
+  - [func3](#fun3)
+  - [func4](#fun4)
+  - [Plot occurence of Bases](#fun5)
+- [Session Info](#session)
+- [References](#ref)
+
+# Introduction{#intro}
+
+This package is builed around the central dogma of Molecular Biology, which describes the transfer of sequential information from DNA, RNA to Amino Acids (Crick, 1970).
+With the package you are able to generate and translate DNA, RNA and Amino-Acid Sequences.
+Further it enables you to perform basic statistic on those sequences.
+
+# Get started{#start}
+
+The R-package `group17` can be found on [Github](https://github.com/rforbiodatascience22/group_17_package).
+
+## Installation{#inst}
+
+To install `group17` from GitHub repository run the code below:
+```{r eval = FALSE}
+library(devtools)
+# install package from github
+devtools::install_github("rforbiodatascience22/group_17_package")
+```
+
+Load the library
+
+```{r eval = FALSE}
+library(group17)
+```
+
+# Methods{#methods}
+## Function 1{#fun1}
+## Function 2{#fun2}
+## Function 3{#fun3}
+## Function 4{#fun4}
+
+## Plot occurence of Bases{#fun5}
+
+To plot the occurence of Bases in a DNA, RNA or Amino Acid Sequence use `plot_base_occurence()`
+
+
+```{r, include = TRUE, fig.align='center'}
+seq <- "ACGTCCCCGGGT"
+plot_base_occurrence(sequence = seq)
+```
+
+## Session Info{#session}
+
+```{r}
+sessionInfo()
+```
+
+
+## References{#ref}
+
+CRICK, F. Central Dogma of Molecular Biology. Nature 227, 561–563 (1970). https://doi.org/10.1038/227561a0
+
