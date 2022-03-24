@@ -6,6 +6,10 @@
 #' @export
 #'
 #' @examples
+#' translate("UUU")
+#' translate(c("UUU","UUC")
+#'
+#'
 translate <- function(codons){
   amino_acids <- paste0(codon_table[codons], collapse = "")
   return(amino_acids)
