@@ -51,13 +51,12 @@ library(group17)
 ```
 
 # Methods{#methods}
-## Function 1{#fun1}
-## Function 2{#fun2}
-## Function 3{#fun3}
-## Function 4{#fun4}
-
-## Plot occurence of Bases{#fun5}
-
+## Function 1{#fun1} : F1_form_DNA
+To create DNA sequence by random nucleotide selection following target length(size) use 'F1_form_DNA'
+## Function 2{#fun2} : F2_transcribe
+## Function 3{#fun3} : F3_get_codon
+## Function 4{#fun4} : F4_translate
+## Plot occurence of Bases{#fun5} : F5_plot_base_occurence
 To plot the occurence of Bases in a DNA, RNA or Amino Acid Sequence use `plot_base_occurence()`
 
 
