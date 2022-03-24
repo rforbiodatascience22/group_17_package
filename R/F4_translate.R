@@ -11,6 +11,6 @@
 #'
 #'
 translate <- function(codons){
-  amino_acids <- paste0(codon_table[codons], collapse = "")
-  return(amino_acids)
+  amino_acid <- paste0(codon_table[codons], collapse = "")
+  return(amino_acid)
 }
