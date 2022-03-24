@@ -7,7 +7,7 @@
 #'
 #' @examples
 #' translate("UUU")
-#' translate(c("UUU","UUC")
+#' translate(c("UUU","UCU"))
 #'
 #'
 translate <- function(codons){
