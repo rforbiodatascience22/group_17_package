@@ -1,4 +1,8 @@
 ---
+output: github_document
+---
+
+---
 title: "Group 17"
 output: rmarkdown::pdf_document
 vignette: >
@@ -10,7 +14,6 @@ vignette: >
 library(group17)
 ```
 # Package Group 17
-
 
 # Table of Contents
 
@@ -45,12 +48,11 @@ library(devtools)
 devtools::install_github("rforbiodatascience22/group_17_package")
 ```
 
-Load the library
+## Load the library
 
 ```{r eval = FALSE}
 library(group17)
 ```
-
 
 ```{r, echo=FALSE}
 data = get(load("/cloud/project/data/rna_codons.rda"))
@@ -140,7 +142,6 @@ plot_base_occurrence <- function(sequence){
 ```{r}
 sessionInfo()
 ```
-
 
 ## References{#ref}
 

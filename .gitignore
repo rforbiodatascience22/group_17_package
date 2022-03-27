@@ -6,3 +6,5 @@
 group17.Rcheck/
 group17*.tar.gz
 group17*.tgz
+/doc/
+/Meta/
