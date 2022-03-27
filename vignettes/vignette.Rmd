@@ -11,6 +11,7 @@ library(group17)
 ```
 # Package Group 17
 
+
 # Table of Contents
 
 - [Introduction](#intro)
@@ -50,12 +51,59 @@ Load the library
 library(group17)
 ```
 
+
+```{r, echo=FALSE}
+data = get(load("/cloud/project/data/rna_codons.rda"))
+data
+```
+
 # Methods{#methods}
 ## Function 1{#fun1} : F1_form_DNA
-To create DNA sequence by random nucleotide selection following target length(size) use 'F1_form_DNA'
+To form a string of DNA base "A", "T", "G", "C" by random nucleotide selection following target length(size), default is 1.
+
+```{r}
+form_dna <- function(size = 1){
+  random_dna1 <- sample(c("A", "T", "G", "C"), size = size, replace = TRUE)
+  random_dna2 <- paste0(random_dna1, collapse = "")
+  return(random_dna2)
+}
+
+```
+
 ## Function 2{#fun2} : F2_transcribe
+To convert DNA base, "T" into "U" and getting mRNA as character.
+
+```{r}
+transcribe <- function(DNA_seq){
+  mRNA <- gsub("T", "U", DNA_seq)
+  return(mRNA)
+}
+```
+
 ## Function 3{#fun3} : F3_get_codon
+To convert mRNA sequence composing of "A", "T", "G", "C" to condon like "AUGC"as character.
+
+```{r}
+get_codons <- function(mRNA_seq, start = 1){
+  mRNA_sequences <- nchar(mRNA_seq)
+  codons <- substring(mRNA_seq,
+                      first = seq(from = start, to = mRNA_seq_len-3+1, by = 3),
+                      last = seq(from = 3+start-1, to = mRNA_seq_len, by = 3))
+  return(codons)
+}
+```
+
 ## Function 4{#fun4} : F4_translate
+To use the data table "codonTable" to translate codons into amino acids and then return it as a sting.
+
+```{r}
+translate <- function(codons){
+  amino_acid <- paste0(codon_table[codons], collapse = "")
+  return(amino_acid)
+}
+
+```
+
 ## Plot occurence of Bases{#fun5} : F5_plot_base_occurence
 To plot the occurence of Bases in a DNA, RNA or Amino Acid Sequence use `plot_base_occurence()`
 
@@ -63,6 +111,28 @@ To plot the occurence of Bases in a DNA, RNA or Amino Acid Sequence use `plot_ba
 ```{r, include = TRUE, fig.align='center'}
 seq <- "ACGTCCCCGGGT"
 plot_base_occurrence(sequence = seq)
+```
+
+```{r}
+plot_base_occurrence <- function(sequence){
+  unique_bases <- sequence %>%
+    stringr::str_split(pattern = stringr::boundary("character"), simplify = TRUE) %>%
+    as.character() %>%
+    unique()
+
+  counts <- sapply(unique_bases, function(count_occurence) stringr::str_count(string = sequence, pattern =  count_occurence)) %>%
+    as.data.frame()
+
+  colnames(counts) <- c("Counts")
+  counts[["Base"]] <- rownames(counts)
+
+  plot <- counts %>%
+    ggplot2::ggplot(ggplot2::aes(x = Base, y = Counts, fill = Base)) +
+    ggplot2::geom_col() +
+    ggplot2::theme_bw()
+
+  return(plot)
+}
 ```
 
 ## Session Info{#session}

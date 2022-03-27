@@ -6,13 +6,13 @@
 #' @return codons which is vector of three chars presenting each codon from the DNA_seq starting from the start .
 #' @export
 #'
-#' @examples get_codons("ATGC", start =  1)
+#' @examples get_codons("AUGC", start =  1)
 #'
-get_codons <- function(DNA_seq, start = 1){
-  DNA_sequences <- nchar(DNA_seq)
-  codons <- substring(DNA_seq,
-                      first = seq(from = start, to = DNA_sequences-3+1, by = 3),
-                      last = seq(from = 3+start-1, to = DNA_sequences, by = 3))
+get_codons <- function(mRNA_seq, start = 1){
+  mRNA_sequences <- nchar(mRNA_seq)
+  codons <- substring(mRNA_seq,
+                      first = seq(from = start, to = mRNA_seq_len-3+1, by = 3),
+                      last = seq(from = 3+start-1, to = mRNA_seq_len, by = 3))
   return(codons)
 }
 

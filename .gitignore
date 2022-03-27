@@ -3,3 +3,6 @@
 .RData
 .Ruserdata
 .DS_store
+group17.Rcheck/
+group17*.tar.gz
+group17*.tgz
