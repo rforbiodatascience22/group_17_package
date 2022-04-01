@@ -4,18 +4,18 @@
 \alias{form_dna}
 \title{Title form_DNA}
 \usage{
-form_dna(size2)
+form_dna(size = 1)
 }
 \arguments{
 \item{size}{integer value that represent the length of the DNA sequence to be randomly generated}
 }
 \value{
-
+A sequence of nucleotide base as random_dna2
 }
 \description{
 Title form_DNA
 }
 \examples{
-form_dna
+form_dna(size = 15)
 
 }

@@ -4,12 +4,12 @@
 \alias{get_codons}
 \title{Title get_codons}
 \usage{
-get_codons(DNA_seq, start = 1)
+get_codons(mRNA_seq, start = 1)
 }
 \arguments{
-\item{DNA_seq}{it's a string  that represents a DNA sequence to be transcribed  with the transcribe function  .}
-
 \item{start}{it's an integer that represents the starting point of first the reading frame .}
+
+\item{DNA_seq}{it's a string  that represents a DNA sequence to be transcribed  with the transcribe function  .}
 }
 \value{
 codons which is vector of three chars presenting each codon from the DNA_seq starting from the start .
@@ -18,6 +18,6 @@ codons which is vector of three chars presenting each codon from the DNA_seq sta
 Title get_codons
 }
 \examples{
-get_codons("ATGC", start =  1)
+get_codons("AUGC", start =  1)
 
 }
