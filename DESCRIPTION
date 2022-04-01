@@ -2,7 +2,7 @@ Package: group17
 Type: Package
 Title: What the Package Does (Title Case)
 Version: 0.1.0
-Author: Elena Krismer, Ewelina Holm Bidstrp
+Author: Elena Krismer, Ewelina Holm Bidstrup
 Maintainer: Elena Krismer <elena.krismer@hotmail.com>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
